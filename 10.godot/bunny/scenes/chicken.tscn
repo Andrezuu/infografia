@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btuuxnt873otk"]
+[gd_scene load_steps=9 format=3 uid="uid://ddtyv4gwjn615"]
 
 [ext_resource type="Texture2D" uid="uid://c4fc2uicw2pp8" path="res://assets/Characters/Free Chicken Sprites.png" id="1_cthqd"]
 [ext_resource type="Script" path="res://scripts/chicken.gd" id="1_hergc"]

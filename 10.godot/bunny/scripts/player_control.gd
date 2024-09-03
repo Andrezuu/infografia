@@ -8,17 +8,16 @@ signal do_move(input_vector)
 
 @export var body: CharacterBody2D
 @onready var first_chicken: CharacterBody2D = $"/root/Main/Chicken"
-
+@onready var second_chicken: CharacterBody2D = $"/root/Main/Chicken2"
+var xd
 
 @onready var timer = $Timer
 
-@onready var chickens: Array[CharacterBody2D]= [first_chicken]
+@onready var chickens: Array[CharacterBody2D]= [first_chicken, second_chicken]
 const ACCELERATION = 500
 const FRICTION = 500
 const MAX_SPEED = 100
 @onready var EGG = preload("res://scenes/egg.tscn")
-
-
 
 enum {
 	MOVE,
@@ -29,6 +28,8 @@ var state = MOVE
 
 var input_vector
 var last_direction
+
+
 
 func _physics_process(delta: float) -> void:
 	match state:
@@ -76,7 +77,7 @@ func _on_timer_timeout() -> void:
 
 func create_marker_at_position(position: Vector2):
 	
-	var egg = EGG.instantiate() # Instancia de la escena Egg
+	var egg = EGG.instantiate() 
 	egg.position = position
 	var root = get_tree().root.get_child(0)
 	if root:
@@ -84,6 +85,19 @@ func create_marker_at_position(position: Vector2):
 		print('xd', egg)
 		print(chickens)
 		for chicken in chickens:
-			chicken.add_target(egg)
+			if chicken.has_method("add_target"):
+				chicken.add_target(egg)
 	else:
-		print("Error: El nodo actual no es válido para agregar hijos.")# Agregar el Egg como target en el Chicken
+		print("Error: El nodo actual no es válido para agregar hijos.")
+
+func register_new_chicken(new_chicken: CharacterBody2D) -> void:
+	print(new_chicken, 'new chicken')
+	
+	
+	chickens.append(new_chicken)
+	add_child(new_chicken)
+	#print_all_nodes(xd)
+	#var root =/ get_tree().root.get_child(0)
+	#print(root, 'root')
+	#if root:
+		#root.add_child(new_chicken)

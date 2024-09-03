@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb5t8ic8mfs6m"]
+[gd_scene load_steps=5 format=3 uid="uid://ceu3x5rpi3r6n"]
 
-[ext_resource type="PackedScene" uid="uid://btuuxnt873otk" path="res://scenes/chicken.tscn" id="1_i3c47"]
+[ext_resource type="PackedScene" uid="uid://ddtyv4gwjn615" path="res://scenes/chicken.tscn" id="1_i3c47"]
 [ext_resource type="Script" path="res://scripts/target.gd" id="2_uga8p"]
 [ext_resource type="Texture2D" uid="uid://jt0c1lqju8ha" path="res://assets/Characters/Egg_And_Nest.png" id="3_h0jvq"]
 

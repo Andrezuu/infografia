@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc13h1r6bqkxu"]
+[gd_scene load_steps=3 format=3 uid="uid://c4054y3jhtxw7"]
 
 [ext_resource type="Script" path="res://scripts/egg.gd" id="1_1dmfu"]
 [ext_resource type="Texture2D" uid="uid://jt0c1lqju8ha" path="res://assets/Characters/Egg_And_Nest.png" id="1_g4eaf"]
