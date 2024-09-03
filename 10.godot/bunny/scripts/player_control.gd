@@ -7,15 +7,17 @@ signal do_attack
 signal do_move(input_vector)
 
 @export var body: CharacterBody2D
-@onready var chicken: CharacterBody2D = $"/root/Main/Chicken"
+@onready var first_chicken: CharacterBody2D = $"/root/Main/Chicken"
+
 
 @onready var timer = $Timer
 
-
+@onready var chickens: Array[CharacterBody2D]= [first_chicken]
 const ACCELERATION = 500
 const FRICTION = 500
 const MAX_SPEED = 100
 @onready var EGG = preload("res://scenes/egg.tscn")
+
 
 
 enum {
@@ -80,7 +82,8 @@ func create_marker_at_position(position: Vector2):
 	if root:
 		root.add_child(egg)
 		print('xd', egg)
-		print(chicken)
-		chicken.add_target(egg)
+		print(chickens)
+		for chicken in chickens:
+			chicken.add_target(egg)
 	else:
 		print("Error: El nodo actual no es válido para agregar hijos.")# Agregar el Egg como target en el Chicken
