@@ -1,21 +1,23 @@
 extends CharacterBody2D
 
-@export var target: Node2D = null
+@export var targets = []
 @export var max_speed = 50
 @onready var navigation: NavigationAgent2D = $NavigationAgent2D
 
 func setup():
 	await get_tree().physics_frame
-	if target:
-		navigation.target_position = target.global_position
+	if targets:
+		for target in targets:
+			navigation.target_position = target.global_position
 
 func _ready() -> void:
 	call_deferred("setup")
 	print(navigation.get_current_navigation_path())
 	
 func _physics_process(delta: float) -> void:
-	if target:
-		navigation.target_position = target.global_position
+	if targets:
+		for target in targets:
+			navigation.target_position = target.global_position
 	if navigation.is_navigation_finished():
 		return
 	
@@ -24,3 +26,8 @@ func _physics_process(delta: float) -> void:
 	velocity = global_position.direction_to(nex_path_position) * max_speed
 	
 	move_and_slide()
+	
+func add_target(new_target):
+	print(new_target, 'mi nuevo target')
+	targets.append(new_target)
+	print(targets)

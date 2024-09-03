@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceu3x5rpi3r6n"]
+[gd_scene load_steps=5 format=3 uid="uid://cb5t8ic8mfs6m"]
 
-[ext_resource type="PackedScene" uid="uid://ddtyv4gwjn615" path="res://scenes/chicken.tscn" id="1_i3c47"]
+[ext_resource type="PackedScene" uid="uid://btuuxnt873otk" path="res://scenes/chicken.tscn" id="1_i3c47"]
 [ext_resource type="Script" path="res://scripts/target.gd" id="2_uga8p"]
 [ext_resource type="Texture2D" uid="uid://jt0c1lqju8ha" path="res://assets/Characters/Egg_And_Nest.png" id="3_h0jvq"]
 
@@ -14,8 +14,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-33, -37, 135, -15, 136
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_pi7pc")
 
-[node name="Chicken" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_i3c47")]
-target = NodePath("../Target")
+[node name="Chicken" parent="." instance=ExtResource("1_i3c47")]
 
 [node name="Target" type="Marker2D" parent="."]
 position = Vector2(210, 42)

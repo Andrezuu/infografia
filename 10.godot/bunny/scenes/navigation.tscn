@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cos0rqet2pgba"]
+
+[ext_resource type="PackedScene" uid="uid://btuuxnt873otk" path="res://scenes/chicken.tscn" id="1_hxnf7"]
+[ext_resource type="Script" path="res://scripts/marker_2d.gd" id="2_4nhly"]
+[ext_resource type="Texture2D" uid="uid://jt0c1lqju8ha" path="res://assets/Characters/Egg_And_Nest.png" id="3_6f5b3"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ah3bl"]
+vertices = PackedVector2Array(205.758, 76.2578, 259.859, 161.797, 201.438, 133.633, 168.711, 53, 45.3828, 106.867, 25.8203, 74.2813, 42.3203, 49.5391, 69.2188, 86.8516, 58.2578, 107.578, 49.1484, 179.25, 35.4922, 179.648, 159.75, 159.039, 99.7188, 139.031)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 4, 8), PackedInt32Array(11, 12, 8, 7, 3, 2)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(170, 42, 213, 69, 287, 186, 202, 145, 161, 170, 95, 148, 66, 126, 58, 189, 24, 190, 35, 109, 14, 74, 42, 32, 73, 75)])
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ah3bl")
+
+[node name="Chicken" parent="." instance=ExtResource("1_hxnf7")]
+position = Vector2(106, 95)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(51, 23)
+script = ExtResource("2_4nhly")
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
+texture = ExtResource("3_6f5b3")
+hframes = 4

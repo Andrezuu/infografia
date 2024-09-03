@@ -1163,5 +1163,7 @@ position = Vector2(150, 56)
 [node name="Cow" parent="." instance=ExtResource("5_ym80j")]
 position = Vector2(107, 21)
 
-[node name="Chicken" parent="." instance=ExtResource("6_7e87p")]
+[node name="Chicken" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_7e87p")]
 position = Vector2(63, 39)
+target = NodePath("../Player")
+max_speed = null
